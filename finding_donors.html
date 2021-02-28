@@ -13112,7 +13112,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -13214,7 +13214,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13230,7 +13230,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13383,7 +13383,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Total number of records</span>
@@ -13396,13 +13396,13 @@ div#notebook {
 <span class="n">n_at_most_50k</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">income</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[</span><span class="s1">&#39;&lt;=50K&#39;</span><span class="p">]</span>
 
 <span class="c1"># TODO: Percentage of individuals whose income is more than $50,000</span>
-<span class="n">greater_percent</span> <span class="o">=</span> <span class="n">n_greater_50k</span> <span class="o">/</span> <span class="n">n_records</span>
+<span class="n">greater_percent</span> <span class="o">=</span> <span class="n">n_greater_50k</span> <span class="o">/</span> <span class="n">n_records</span> <span class="o">*</span> <span class="mi">100</span>
 
 <span class="c1"># Print the results</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of records: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_records</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individuals making more than $50,000: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_greater_50k</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Individuals making at most $50,000: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_at_most_50k</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Percentage of individuals making more than $50,000: </span><span class="si">{}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">greater_percent</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Percentage of individuals making more than $50,000: </span><span class="si">{:.2f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">greater_percent</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13422,7 +13422,7 @@ div#notebook {
 <pre>Total number of records: 45222
 Individuals making more than $50,000: 11208
 Individuals making at most $50,000: 34014
-Percentage of individuals making more than $50,000: 0.2478439697492371%
+Percentage of individuals making more than $50,000: 24.78%
 </pre>
 </div>
 </div>
@@ -14616,11 +14616,11 @@ Naive Predictor: [Accuracy score: 0.2478, F-score: 0.2917]</p>
 <p><strong>Answer:</strong></p>
 <p>I believe the following 5 features are the most relevant for determining if the income is higher or lower than 50'000:</p>
 <ul>
-<li>education</li>
-<li>occupation</li>
-<li>workclass</li>
-<li>hours per week</li>
-<li>age</li>
+<li><strong>education</strong>: I would expect a higher income for somebody with PhD or higher education (Masters, Bachelor), than a professional with only high school finalized</li>
+<li><strong>occupation</strong>: depending on the industry, the salaries vary. For example, IT specialits are better paid than foreign language teachers (even if both groups finalized higher education)</li>
+<li><strong>workclass</strong>: income may also differ if a person works in the public or private sector. In my country, the private sector offers higher salaries, but maybe this could be dependant on the country as well.</li>
+<li><strong>hours per week</strong>: income is higher for a person that works full time compared to a person that works part time</li>
+<li><strong>age</strong>: recent graduates earn less than professionals with more years of work experience</li>
 </ul>
 
 </div>
